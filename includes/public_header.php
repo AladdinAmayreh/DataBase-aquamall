@@ -1,18 +1,9 @@
  <?php 
  session_start();
- unset($_SESSION['product_id'][0]);
+
  include("includes/connect.php");
-
-
-
-
-
-
-
  ?>
-
-
- <!DOCTYPE html>
+ <!DOCTYPE html> 
  <html lang="en">
 
  <head>
@@ -155,7 +146,7 @@
 
         <!-- Cart Button -->
         <div class="cart-button">
-            <a href="#" id="rightSideCart"><img src="img/core-img/bag.svg" alt=""> 
+            <a href="" id="rightSideCart"><img src="img/core-img/bag.svg" alt=""> 
                 <span>
                 <?php
                 if(isset($_SESSION['product_id'])){
@@ -184,7 +175,7 @@
                             $result = mysqli_query($conn,$query);
                             while($row = mysqli_fetch_assoc($result)) {
                             echo "<div class='single-cart-item'>
-                                    <a href='single_product_details.php?product_id={$row['product_id']}' class='product-image'>";
+                                     <a href='remove-product.php?product_id={$row['product_id']}' class='product-image'>";
                             echo "<img src='admin/upload/{$row['product_image']}' class='cart-thumb' alt=''>"; 
                             echo "<div class='cart-item-desc'>
                                     <span class='product-remove'>

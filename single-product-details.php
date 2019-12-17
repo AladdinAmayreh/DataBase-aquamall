@@ -1,7 +1,12 @@
-<?php include("includes/public_header.php"); 
+<?php
+ include("includes/public_header.php"); 
 if (isset($_POST['addtocart'])) {
     $_SESSION['product_id'][] = $_GET['product_id'];
+     echo "<script> window.top.location='single-product-details.php?product_id={$_GET['product_id']}' </script>";
 }
+if(!isset($_GET['product_id'])) {
+        echo "<script> window.top.location='shop.php' </script>";
+        }
 ?>
 
   <?php 
@@ -19,7 +24,7 @@ if (isset($_POST['addtocart'])) {
                                         echo " <span>mango</span>
                                             <a href=''>
                                                   <h2>One Shoulder Glitter Midi Dress</h2>  </a>";   
-                                        echo "<p class='product-price'></span>{$row['product_price']} </p>";
+                                        echo "<p class='product-price'></span>$ {$row['product_price']} </p>";
                                         echo "<p class='product-desc'>{$row['product_desc']} </p>";
                                         echo "<form class='cart-form clearfix' method='post'>";
                                         echo ' <div class="cart-fav-box d-flex align-items-center">';

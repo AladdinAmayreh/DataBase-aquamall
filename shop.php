@@ -2,6 +2,10 @@
 <?php 
 
 include("includes/public_header.php");
+if(!isset($_GET['category_id'])) {
+        echo "<script> window.top.location='index.php' </script>";
+        }
+?>
   
 ?>
 
@@ -11,7 +15,11 @@ include("includes/public_header.php");
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="page-title text-center">
-                        <h2>dresses</h2>
+                        <?php 
+                        echo " <h2>{$_GET['category_name']}</h2>";
+
+                        ?>
+                       
                     </div>
                 </div>
             </div>
@@ -128,7 +136,16 @@ include("includes/public_header.php");
                             </div>
                         </div>
 
-                        <!-- ##### Single Widget ##### -->
+                        <!-- ##### 
+
+
+
+
+
+
+
+
+                         Widget ##### -->
                         <div class="widget brands mb-50">
                             <!-- Widget Title 2 -->
                             <p class="widget-title2 mb-30">Brands</p>
@@ -187,11 +204,12 @@ include("includes/public_header.php");
                                         <span>topshop</span>
                                         <a href='single-product-details.html'>
                                             <h6></h6></a>";
-                                            echo "<p class='product-price'><span class='old-price'>$75.00</span> $55.00</p>";
-                                            echo '  <div class="hover-content">';
-                                            echo' <div class="add-to-cart-btn">';
-                                            echo "<a href='single-product-details.php?product_id={$row['product_id']}'class='btn essence-btn'>Product Descrebtion</a>";
-                                            echo " </div>
+                                     echo "<p class='product-price'>$ {$row['product_price']} </p>";
+
+                                     echo '  <div class="hover-content">';
+                                     echo' <div class="add-to-cart-btn">';
+                                     echo "<a href='single-product-details.php?product_id={$row['product_id']}'class='btn essence-btn'>Product Descrebtion</a>";
+                                     echo " </div>
                                         </div>
                                     </div>
                                 </div>
