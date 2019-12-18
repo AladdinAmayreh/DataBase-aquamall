@@ -112,7 +112,12 @@
                 </div>
                 <!-- User Login Info -->
                 <div class="user-login-info">
-                    <a href="#"><img src="img/core-img/user.svg" alt=""></a>
+                       
+                    <form method="post">
+                    <a href="#"><img  src="img/core-img/user.svg" alt="">
+                        
+                    </a>
+                    </form>
                 </div>
                 <?php 
                 
@@ -211,6 +216,17 @@
                 </ul>
                 <div class="checkout-btn mt-100">
                     <a href="checkout.php" class="btn essence-btn">check out</a>
+                <?php 
+                         if (isset($_POST['submet'])) {
+                        session_start();
+                       session_destroy();
+
+                    header("location:index.php");
+
+                        }
+                        ?>
+                
+                    <button name="submet" class="btn essence-btn">Logout</button>
                 </div>
             </div>
         </div>
